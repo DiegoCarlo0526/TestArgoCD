@@ -4,8 +4,10 @@ metadata:
   name: app2
 spec:
   type: LoadBalancer
+  loadBalancerIP: 192.168.137.61
   ports:
-  - protocol: TCP
+  - name: http
+    protocol: TCP
     port: 80
     targetPort: 80
   selector:
