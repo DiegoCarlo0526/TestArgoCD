@@ -2,8 +2,16 @@ apiVersion: v1
 kind: Service
 metadata:
   name: app2
+  annotations:
+    getambassador.io/config: |
+      ---
+      apiVersion: ambassador/v1
+      kind: Mapping
+      name: app2-service_mapping
+      host: app2.your-domain
+      prefix: /
+      service: app2:80
 spec:
-  type: LoadBalancer
   ports:
   - protocol: TCP
     port: 80
