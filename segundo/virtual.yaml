@@ -4,8 +4,7 @@ metadata:
   name: segundo
   namespace: default
 spec:
-  hosts:
-    - "*"
+
   gateways:
     - beta-gateway
   http:
