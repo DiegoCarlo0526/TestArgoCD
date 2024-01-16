@@ -19,11 +19,3 @@ spec:
             host: nginx.default.svc.cluster.local
             port:
               number: 80
-      corsPolicy:
-        allowOrigins:
-          - regex: ".*"
-        allowMethods:
-          - "*"
-        allowCredentials: true
-        allowHeaders:
-          - "*"
