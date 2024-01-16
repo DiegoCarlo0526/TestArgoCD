@@ -3,6 +3,8 @@ kind: Kustomization
 resources:
 - deploy.yaml
 - service.yaml
+- virtual.yaml
+- gatewat.yaml
 images:
 - name: ghcr.io/diegocarlo0526/testargocd/nginx
   newTag: "31"
