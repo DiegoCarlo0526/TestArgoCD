@@ -9,8 +9,8 @@ spec:
   gateways:
     - bookinfo-gateway
   http:
-      route:
-        - destination:
-            host: argocd-server.argocd.svc.cluster.local
-            port:
-              number: 80
+  - route:
+      - destination:
+          host: argocd-server.argocd.svc.cluster.local
+          port:
+            number: 80
