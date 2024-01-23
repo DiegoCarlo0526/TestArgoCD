@@ -1,8 +1,8 @@
 apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
 metadata:
-  name: segundo
-  namespace: default
+  name: argocd-virtualservice
+  namespace: argocd
 spec:
   hosts:
     - "*"
