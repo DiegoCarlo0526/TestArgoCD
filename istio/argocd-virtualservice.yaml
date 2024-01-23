@@ -5,17 +5,12 @@ metadata:
   namespace: argocd
 spec:
   hosts:
-    - "*"
+    - "argocd.ecositema.com"
   gateways:
-    - bookinfo-gateway
+    - argocd-gateway
   http:
-    - match:
-        - uri:
-            prefix: /argocd/
-      rewrite:
-        uri: /
-      route:
-        - destination:
-            host: argocd-server.argocd.svc.cluster.local
-            port:
-              number: 80
+  - route:
+      - destination:
+          host: argocd-server.argocd.svc.cluster.local
+          port:
+            number: 80
