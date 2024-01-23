@@ -8,7 +8,7 @@ spec:
     istio: ingressgateway
   servers:
     - hosts:
-        - '*'
+        - 'kiali.ecositema.com'
       port:
         name: http
         number: 8080

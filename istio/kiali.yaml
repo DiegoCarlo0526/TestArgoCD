@@ -5,17 +5,12 @@ metadata:
   namespace: istio-system
 spec:
   hosts:
-    - "*"
+    - "kiali.ecositema.com"
   gateways:
     - istio-gateway
   http:
-    - match:
-        - uri:
-            prefix: /kiali/
-      rewrite:
-        uri: /
-      route:
-        - destination:
-            host: kiali.istio-system.svc.cluster.local
-            port:
-              number: 20001
+  - route:
+      - destination:
+          host: kiali.istio-system.svc.cluster.local
+          port:
+            number: 20001
