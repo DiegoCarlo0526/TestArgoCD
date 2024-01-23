@@ -13,3 +13,5 @@ spec:
         name: http
         number: 8080
         protocol: HTTP
+      tls:
+        mode: PASSTHROUGH  
