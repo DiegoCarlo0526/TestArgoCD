@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
 - argocd-virtualservice.yaml
 - kiali.yaml
+- kiali-ingres.yaml

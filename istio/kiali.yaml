@@ -7,7 +7,7 @@ spec:
   hosts:
     - "*"
   gateways:
-    - bookinfo-gateway
+    - istio-gateway
   http:
     - match:
         - uri:
