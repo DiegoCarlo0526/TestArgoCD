@@ -17,4 +17,5 @@ spec:
     - kiali.ecositema.com
   secretName: selfsigned-cert-tls
   issuerRef:
-    name: test-selfsigned
+    name: letsencrypt-prod
+    kind: ClusterIssuer
