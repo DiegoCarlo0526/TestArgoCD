@@ -7,9 +7,17 @@ spec:
   selector:
     istio: ingressgateway
   servers:
-    - hosts:
-        - 'kiali.ecositema.com'
-      port:
+    - port:
         name: http
-        number: 8080
+        number: 80
         protocol: HTTP
+      hosts:
+        - 'kiali.ecositema.com'
+    - port:
+        name: https-443
+        number: 443
+        protocol: HTTPS
+      hosts:
+        - 'kiali.ecositema.com'
+      tls:
+        mode: SIMPLE  
