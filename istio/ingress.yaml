@@ -8,8 +8,7 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-staging
 spec:
   rules:
-    - host: kiali.ecositema.com
-      http:
+    - http:
         paths:
           - backend:
               service:
@@ -17,8 +16,9 @@ spec:
                 port:
                   number: 80
             path: /*
-            pathType: Prefix
+            pathType: ImplementationSpecific
   tls:
   - hosts:
     - kiali.ecositema.com   
+    - argocd.ecositema.com
     secretName: myingress-cert
