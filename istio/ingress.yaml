@@ -21,4 +21,4 @@ spec:
   tls:
   - hosts:
     - kiali.ecositema.com   
-    secretName: ingress-cert-secret-base-7kb92
+    secretName: myingress-cert
