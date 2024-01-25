@@ -1,10 +1,25 @@
+# apiVersion: cert-manager.io/v1
+# kind: Issuer
+# metadata:
+#   name: test-selfsigned
+#   namespace: istio-system
+# spec:
+#   selfSigned: {}
 apiVersion: cert-manager.io/v1
-kind: Issuer
+kind: ClusterIssuer
 metadata:
-  name: test-selfsigned
-  namespace: istio-system
+ name: letsencrypt-staging
+ namespace: istio-system
 spec:
-  selfSigned: {}
+ acme:
+   server: https://acme-staging-v02.api.letsencrypt.org/directory
+   email: admin@ecosistema.com
+   privateKeySecretRef:
+     name: letsencrypt-staging
+   solvers:
+   - http01:
+       ingress:
+         class:  istio
 ---
 apiVersion: cert-manager.io/v1
 kind: Certificate
@@ -18,4 +33,4 @@ spec:
     - argocd.ecositema.com
   secretName: selfsigned-cert-tls
   issuerRef:
-    name: test-selfsigned
+    name: letsencrypt-staging
