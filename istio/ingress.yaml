@@ -16,8 +16,6 @@ spec:
                 name: istio-ingressgateway
                 port:
                   number: 80
-            path: /*
-            pathType: ImplementationSpecific
   tls:
   - hosts:
     - kiali.ecositema.com   
