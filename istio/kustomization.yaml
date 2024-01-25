@@ -6,3 +6,4 @@ resources:
 - argocd-virtualservice.yaml
 - kiali.yaml
 - kiali-ingres.yaml
+- certificados.yaml
