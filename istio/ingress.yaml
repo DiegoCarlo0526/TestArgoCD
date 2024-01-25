@@ -8,7 +8,8 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-staging
 spec:
   rules:
-    - http:
+    - host: kiali.ecositema.com
+      http:
         paths:
           - backend:
               service:
