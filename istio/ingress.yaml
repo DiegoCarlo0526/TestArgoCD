@@ -18,6 +18,7 @@ spec:
             pathType: ImplementationSpecific
   tls:
   - hosts:
-    - example.com
+    - ecositema.com
     - kiali.ecositema.com   
+    - argocd.ecositema.com
     secretName: selfsigned-cert-tls      

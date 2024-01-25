@@ -13,9 +13,9 @@ metadata:
   namespace: istio-system
 spec:
   dnsNames:
-    - example.com
+    - ecositema.com
     - kiali.ecositema.com
+    - argocd.ecositema.com
   secretName: selfsigned-cert-tls
   issuerRef:
-    name: letsencrypt-prod
-    kind: ClusterIssuer
+    name: test-selfsigned
