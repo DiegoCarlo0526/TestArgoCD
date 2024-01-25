@@ -19,7 +19,6 @@ spec:
             pathType: ImplementationSpecific
   tls:
   - hosts:
-    - ecositema.com
     - kiali.ecositema.com   
     - argocd.ecositema.com
     secretName: ingress-cert-tls   
