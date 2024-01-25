@@ -22,4 +22,4 @@ spec:
     - ecositema.com
     - kiali.ecositema.com   
     - argocd.ecositema.com
-    secretName: selfsigned-cert-tls      
+    secretName: ingress-cert-tls   
