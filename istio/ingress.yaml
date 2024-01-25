@@ -20,5 +20,4 @@ spec:
   tls:
   - hosts:
     - kiali.ecositema.com   
-    - argocd.ecositema.com
     secretName: ingress-cert-tls   
