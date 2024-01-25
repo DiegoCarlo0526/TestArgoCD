@@ -7,7 +7,6 @@ metadata:
     kubernetes.io/ingress.class: istio
     cert-manager.io/cluster-issuer: letsencrypt-staging
 spec:
-  ingressClassName: istio
   rules:
     - host: kiali.ecositema.com
       http:

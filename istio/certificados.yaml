@@ -6,10 +6,9 @@
 # spec:
 #   selfSigned: {}
 apiVersion: cert-manager.io/v1
-kind: Issuer
+kind: ClusterIssuer
 metadata:
  name: letsencrypt-staging
- namespace: istio-system
 spec:
  acme:
    server: https://acme-staging-v02.api.letsencrypt.org/directory
@@ -19,7 +18,7 @@ spec:
    solvers:
    - http01:
        ingress:
-         ingressClassName:  istio-ingress
+         name:  istio-ingress
 ---
 # apiVersion: cert-manager.io/v1
 # kind: Certificate
