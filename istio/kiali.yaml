@@ -31,3 +31,20 @@ spec:
           host: grafana.istio-system.svc.cluster.local
           port:
             number: 3000
+---            
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: api
+  namespace: istio-system
+spec:
+  hosts:
+    - "api.ecositema.com"
+  gateways:
+    - istio-gateway
+  http:
+  - route:
+      - destination:
+          host: productpage.default.svc.cluster.local
+          port:
+            number: 9080
