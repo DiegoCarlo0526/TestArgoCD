@@ -13,11 +13,4 @@ spec:
         protocol: HTTP
       hosts:
         - 'kiali.ecositema.com'
-    # - port:
-    #     name: https-443
-    #     number: 443
-    #     protocol: HTTPS
-    #   hosts:
-    #     - 'kiali.ecositema.com'
-    #   tls:
-    #     mode: SIMPLE  
+        - 'grafana.ecositema.com'

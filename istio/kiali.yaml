@@ -14,3 +14,20 @@ spec:
           host: kiali.istio-system.svc.cluster.local
           port:
             number: 20001
+---            
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: grafana
+  namespace: istio-system
+spec:
+  hosts:
+    - "grafana.ecositema.com"
+  gateways:
+    - istio-gateway
+  http:
+  - route:
+      - destination:
+          host: kiali.istio-system.svc.cluster.local
+          port:
+            number: 20001
