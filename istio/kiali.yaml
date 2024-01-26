@@ -41,7 +41,7 @@ spec:
   hosts:
     - "api.ecositema.com"
   gateways:
-    - istio-gateway
+    - default-gateway
   http:
   - route:
       - destination:
