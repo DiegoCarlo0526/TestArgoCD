@@ -5,7 +5,7 @@ metadata:
   namespace: istio-system
   annotations:
     kubernetes.io/ingress.class: istio
-    haproxy.org/rate-limit-requests: 10
+    #haproxy.org/rate-limit-requests: 10
     #cert-manager.io/cluster-issuer: letsencrypt-staging
 spec:
   rules:
