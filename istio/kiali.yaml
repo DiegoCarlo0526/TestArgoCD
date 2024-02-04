@@ -48,3 +48,19 @@ spec:
           host: productpage.default.svc.cluster.local
           port:
             number: 9080
+
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: prod-route
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: PathPrefix(`/prod`)
+    kind: Rule
+    services:
+    - name: prod-service
+      port: 80            
