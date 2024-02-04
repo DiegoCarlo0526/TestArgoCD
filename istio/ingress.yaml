@@ -1,31 +1,31 @@
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: istio-ingress
-  namespace: istio-system
-  annotations:
-    kubernetes.io/ingress.class: istio
-    #haproxy.org/rate-limit-requests: 10
-    #cert-manager.io/cluster-issuer: letsencrypt-staging
-spec:
-  rules:
-    - http:
-        paths:
-          - backend:
-              service:
-                name: istio-ingressgateway
-                port:
-                  number: 80
-            path: /*
-            pathType: ImplementationSpecific
-  # tls:
-  # - hosts:
-  #   - kiali.ecositema.com   
-  #   - argocd.ecositema.com
-  #   secretName: myingress-cert
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: istio-ingress
+#   namespace: istio-system
+#   annotations:
+#     kubernetes.io/ingress.class: istio
+#     #haproxy.org/rate-limit-requests: 10
+#     #cert-manager.io/cluster-issuer: letsencrypt-staging
+# spec:
+#   rules:
+#     - http:
+#         paths:
+#           - backend:
+#               service:
+#                 name: istio-ingressgateway
+#                 port:
+#                   number: 80
+#             path: /*
+#             pathType: ImplementationSpecific
+#   # tls:
+#   # - hosts:
+#   #   - kiali.ecositema.com   
+#   #   - argocd.ecositema.com
+#   #   secretName: myingress-cert
 
 
----
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -59,4 +59,21 @@ spec:
     - protocol: TCP
     port: 80
     targetPort: 80
-    
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: whoami
+spec:
+  rules:
+  - host: "api.ecosistema.com"
+    http:
+    paths:
+    - path: /
+        pathType: Prefix
+        backend:
+        service:
+            name: whoami
+            port:
+            number: 80
+  ingressClassName: nginx    
