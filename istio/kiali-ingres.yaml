@@ -31,3 +31,11 @@ spec:
         protocol: HTTP
       hosts:
         - 'api.ecositema.com'
+      listeners:
+      - name: http
+        address:
+          socketAddress:
+            port: 80
+            ip: 0.0.0.0
+        http:
+          useRemoteAddress: true        
