@@ -5,7 +5,8 @@ metadata:
   namespace: istio-system
   annotations:
     kubernetes.io/ingress.class: istio
-    cert-manager.io/cluster-issuer: letsencrypt-staging
+    haproxy.org/rate-limit-requests: 10
+    #cert-manager.io/cluster-issuer: letsencrypt-staging
 spec:
   rules:
     - http:
@@ -17,8 +18,8 @@ spec:
                   number: 80
             path: /*
             pathType: ImplementationSpecific
-  tls:
-  - hosts:
-    - kiali.ecositema.com   
-    - argocd.ecositema.com
-    secretName: myingress-cert
+  # tls:
+  # - hosts:
+  #   - kiali.ecositema.com   
+  #   - argocd.ecositema.com
+  #   secretName: myingress-cert
