@@ -59,21 +59,4 @@ spec:
     - protocol: TCP
     port: 80
     targetPort: 80
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: whoami
-spec:
-  rules:
-  - host: "api.ecosistema.com"
-    http:
-    paths:
-    - path: /
-        pathType: Prefix
-        backend:
-        service:
-            name: whoami
-            port:
-            number: 80
-  ingressClassName: nginx    
+    
