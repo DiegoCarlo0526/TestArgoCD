@@ -55,7 +55,7 @@ apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: prod-route
-  namespace: istio-system
+  namespace: kube-system
 spec:
   entryPoints:
     - web
