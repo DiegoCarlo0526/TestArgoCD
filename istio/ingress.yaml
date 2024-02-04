@@ -1,31 +1,3 @@
-# apiVersion: networking.k8s.io/v1
-# kind: Ingress
-# metadata:
-#   name: istio-ingress
-#   namespace: istio-system
-#   annotations:
-#     kubernetes.io/ingress.class: istio
-#     #haproxy.org/rate-limit-requests: 10
-#     #cert-manager.io/cluster-issuer: letsencrypt-staging
-# spec:
-#   rules:
-#     - http:
-#         paths:
-#           - backend:
-#               service:
-#                 name: istio-ingressgateway
-#                 port:
-#                   number: 80
-#             path: /*
-#             pathType: ImplementationSpecific
-#   # tls:
-#   # - hosts:
-#   #   - kiali.ecositema.com   
-#   #   - argocd.ecositema.com
-#   #   secretName: myingress-cert
-
-
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
